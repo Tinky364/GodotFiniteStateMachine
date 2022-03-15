@@ -1,0 +1,45 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://src/player_fsm/StateIdle.cs" type="Script" id=1]
+[ext_resource path="res://src/player_fsm/StateMove.cs" type="Script" id=2]
+[ext_resource path="res://src/enemy_fsm/StateIdle.cs" type="Script" id=3]
+[ext_resource path="res://src/Player.cs" type="Script" id=4]
+[ext_resource path="res://src/Enemy.cs" type="Script" id=5]
+[ext_resource path="res://src/enemy_fsm/StateAttack.cs" type="Script" id=6]
+
+[sub_resource type="Resource" id=1]
+script = ExtResource( 1 )
+Key = 0
+_idleDuration = 2.0
+
+[sub_resource type="Resource" id=2]
+script = ExtResource( 2 )
+Key = 1
+_moveDuration = 5.0
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 3 )
+Key = 0
+_idleDuration = 1.0
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 6 )
+Key = 1
+_attackDuration = 1.0
+
+[node name="TestScene" type="Node"]
+
+[node name="Player" type="Node2D" parent="."]
+script = ExtResource( 4 )
+IdleState = SubResource( 1 )
+MoveState = SubResource( 2 )
+
+[node name="Enemy" type="Node2D" parent="."]
+script = ExtResource( 5 )
+IdleState = SubResource( 3 )
+AttackState = SubResource( 4 )
+
+[node name="Enemy2" type="Node2D" parent="."]
+script = ExtResource( 5 )
+IdleState = SubResource( 3 )
+AttackState = SubResource( 4 )

@@ -95,7 +95,7 @@ public override void _ExitTree()
 editor. Src path is the directory path of your scripts. if your files in "res://scripts", type "scripts". \
 ![ScreenShot](https://raw.github.com/Tinky364/GodotFiniteStateMachine/master/img/fsm.png)
 
-8.Create the Owner Node. Pick a state resource from the dropdown list to create it, and chose a Key value associated with this state.
+8.Create the Owner Node. Pick a state resource from the dropdown list to create it, and chose a Key value associated with this state. \
 ![ScreenShot](https://raw.github.com/Tinky364/GodotFiniteStateMachine/master/img/state_resource.png)
 
 

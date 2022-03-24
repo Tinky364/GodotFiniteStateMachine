@@ -30,3 +30,7 @@ ExportedObj/
 *.opendb
 *.VC.db
 *.idea
+*.csproj
+
+# JetBrains Rider
+*.sln.iml

@@ -6,9 +6,9 @@ namespace player_fsm
     public class StateIdle : State<Player, Player.States>
     {
         [Export(PropertyHint.Range, "0,10,or_greater")]
-        private float _idleDuration = 2f;
+        private float _duration = 2f;
 
-        private float _idleCount = 0f;
+        private float _count = 0f;
         
         public override void Enter()
         {
@@ -17,18 +17,18 @@ namespace player_fsm
 
         public override void Process(float delta)
         {
-            if (_idleCount > _idleDuration)
+            if (_count > _duration)
             {
                 Owner.Fsm.ChangeState(Player.States.Move);
             }
-            else _idleCount += delta;
+            else _count += delta;
         }
 
         public override void PhysicsProcess(float delta) { }
 
         public override void Exit()
         {
-            _idleCount = 0;
+            _count = 0;
         }
 
         public override void ExitTree() { }

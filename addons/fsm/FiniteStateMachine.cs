@@ -66,7 +66,7 @@ namespace Fsm
             
             return States[stateKey];
         }
-        
+
         /// <summary>
         /// Changes the current state. Calls the Exit function of the previous state, and then calls
         /// the Enter function of the new state.
@@ -80,7 +80,7 @@ namespace Fsm
             {
                 GD.PushWarning(
                     "Changing the current state is failed. The Fsm does not contain a state " +
-                    $"associated with key {stateKey}"
+                    $"associated with key \"{stateKey}\""
                 );
                 return;
             }

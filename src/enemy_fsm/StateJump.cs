@@ -3,13 +3,13 @@ using Godot;
 
 namespace enemy_fsm
 {
-    public class StateIdle : State<Enemy, Enemy.States>
+    public class StateJump : State<Enemy, Enemy.States>
     {
         [Export(PropertyHint.Range, "0,10,or_greater")]
-        public float Duration { get; private set; } = 3f;
+        public float Duration { get; private set; } = 10f;
 
-        public float Count { get; private set; } = 0f;
-
+        public float Count { get; private set; }= 0f;
+        
         public override void Enter()
         {
             GD.Print($"{GetType()}: {Key}");

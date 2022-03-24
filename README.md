@@ -13,7 +13,7 @@ Fsm must be constructed from Nodes with state resources. Fsm objects always must
 ChangeState(stateKey) -> to change the current state.
 
 ## Usage
-1.Add "addons/fsm" directory to your project and activate the plugin from the project settings.
+1.Add "addons/fsm" folder to your project and activate the plugin from the project settings.
 
 2.In the object who will have access the Fsm and its states, create states`
 keys and a field called Fsm. This object will be the Owner.

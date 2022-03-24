@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://src/enemy_fsm/StateRush.cs" type="Script" id=1]
+[ext_resource path="res://src/enemy_fsm/StateIdle.cs" type="Script" id=2]
+[ext_resource path="res://src/EnemyRusher.cs" type="Script" id=3]
+
+[sub_resource type="Resource" id=3]
+script = ExtResource( 2 )
+Key = 0
+Duration = 3.0
+
+[sub_resource type="Resource" id=4]
+script = ExtResource( 1 )
+Key = 2
+Duration = 5.0
+
+[node name="EnemyRusher" type="Node2D"]
+script = ExtResource( 3 )
+IdleState = SubResource( 3 )
+RushState = SubResource( 4 )

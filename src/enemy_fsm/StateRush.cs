@@ -3,13 +3,13 @@ using Godot;
 
 namespace enemy_fsm
 {
-    public class StateAttack : State<Enemy, Enemy.States>
+    public class StateRush : State<Enemy, Enemy.States>
     {
         [Export(PropertyHint.Range, "0,10,or_greater")]
-        private float _attackDuration = 10f;
+        public float Duration { get; private set; } = 10f;
 
-        private float _attackCount = 0f;
-        
+        public float Count { get; private set; } = 0f;
+
         public override void Enter()
         {
             GD.Print($"{GetType()}: {Key}");
@@ -17,18 +17,14 @@ namespace enemy_fsm
 
         public override void Process(float delta)
         {
-            if (_attackCount > _attackDuration)
-            {
-                Owner.Fsm.ChangeState(Enemy.States.Idle);
-            }
-            else _attackCount += delta;
+            Count += delta;
         }
 
         public override void PhysicsProcess(float delta) { }
 
         public override void Exit()
         {
-            _attackCount = 0;
+            Count = 0;
         }
 
         public override void ExitTree() { }
